@@ -31,8 +31,8 @@ cargo test
 docker build . -t hello-app
 
 
-# Test
-docker container run --net=hello-app_hello_app -e DATABASE_URL="postgresql://admin:password123@postgres:5432/users?application_name=hello-app" -p 8080:8080 hello-app
+# Run on local docker
+docker container run --net=hello-app_backnet -e DATABASE_URL="postgresql://admin:password123@postgres:5432/users?application_name=hello-app" --expose 8080 -p 3000:8080 hello-app
 ```
 
 # Routes

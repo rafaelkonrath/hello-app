@@ -20,15 +20,7 @@ services:
       - "5050:80"
     networks:
       - backnet
-  hello-app:
-    image: hello-app:latest
-    container_name: hello-app
-    ports:
-      - '8080:8080'
-    environment:
-      DATABASE_URL: "postgresql://admin:password123@postgres:5432/users?application_name=hello-app"
-    networks:
-      - backnet
+
 volumes:
   progresDB:
 
